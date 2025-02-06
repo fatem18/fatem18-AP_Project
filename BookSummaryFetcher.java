@@ -20,7 +20,7 @@ public class BookSummaryFetcher {
 
             JSONArray docs = jsonObject.getJSONArray("docs");
             if (docs.length() == 0) {
-                return "❌ خلاصه‌ای برای این کتاب یافت نشد.";
+                return "❌ No summary found for this book.";
             }
 
             String workKey = docs.getJSONObject(0).getString("key");
@@ -39,10 +39,10 @@ public class BookSummaryFetcher {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return "❌ خطا در دریافت خلاصه کتاب.";
+            return "❌ Error retrieving book summary.";
         }
 
-        return "❌ خلاصه‌ای برای این کتاب یافت نشد.";
+        return "❌ No summary found for this book.";
     }
 
     private static String fetchJsonFromUrl(String urlString) throws Exception {
